@@ -1,0 +1,68 @@
+# Dislocation cutting obstacle
+units			metal
+boundary		p p p
+atom_style		bond
+
+shell			mkdir cfg
+variable		d equal 4.0
+variable		dm equal $d+0.1
+variable		Ud equal -${U}*$d
+variable		w2_inv equal 1/$w/$w
+
+#shell			rm *.cfg
+
+region			mybox block 0.0 1000 0.0 1000 0.0 500.0 units box
+create_box		2 mybox bond/types 1 extra/bond/per/atom 2
+variable		con equal ${num}/vol
+
+lattice			sc ${d} origin 0 0 0 orient x 1 0 0 orient y 0 1 0 orient z 0 0 1
+region			disl block 0 0.1 EDGE EDGE 0 0.1 units lattice
+region			obs block EDGE EDGE EDGE EDGE 0 0.1 units lattice
+create_atoms	1 region disl
+group			disl type 1
+
+create_atoms	2 random ${num} ${seed} obs
+group			solute type 2
+
+neigh_modify	one 10000
+
+mass			1 1.0
+mass			2 2.0
+
+pair_style		gauss 100.0
+pair_coeff		1 1 0.0 0.0 100
+pair_coeff		1 2 ${Ud} ${w2_inv} 100 
+pair_coeff		2 2 0.0 0.0 0.01
+bond_style		table linear 100
+bond_coeff		1 string.bond LT
+
+create_bonds	many disl disl 1 0.0 ${dm}
+
+compute			1 disl com
+
+thermo			1000
+thermo_style	custom step etotal ebond epair c_1[1]
+
+fix				1 solute setforce 0.0 0.0 0.0
+fix				2 disl setforce NULL 0.0 0.0
+
+variable		a loop 100000
+label			loop
+	reset_timestep	0
+	variable		t equal v_a*0.00001
+	fix				3 disl addforce $t 0.0 0.0
+	fix_modify		3 energy yes
+
+	variable		s equal step
+	dump			1 all cfg 100000 cfg/disl*.cfg mass type xs ys zs vx vy vz fx fy fz
+	dump_modify		1 element Au C sort id
+
+	minimize		1e-20 1e-20 50000 1000000
+	unfix			3
+	undump			1		
+
+	if "$s >= 50000" then &
+		"print '${U}    ${con}    $w    $t' append dat.stress" &
+		quit
+next			a
+jump			input loop

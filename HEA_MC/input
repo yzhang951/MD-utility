@@ -1,0 +1,46 @@
+# Strain energy of High Entropy Alloy
+# Yin Zhang
+# Mar 28, 2019
+
+############## Initialization
+units			metal
+boundary		p p p
+atom_style		atomic
+##############
+
+############## Atom definition
+lattice			fcc 3.556398 origin 0 0 0 orient x 1 0 0 orient y 0 1 0 orient z 0 0 1
+region			mybox block 0 15 0 15 0 15 units lattice
+
+create_box		5 mybox
+create_atoms	1 box
+
+region			1 block 6 9 6 9 6 9 units lattice
+group			inner region 1
+group			outer subtract all inner
+
+############## Potential
+pair_style      eam/alloy
+pair_coeff      * * /home/yzhang951/HEA_MC/NiCoCr.lammps.eam Ni Co Cr Co Cr
+
+
+############## Thermo
+thermo			1000
+thermo_style    custom step etotal pxx pyy pzz pxy pyz pxz
+dump            1 all cfg 100000 *.cfg mass type xs ys zs
+dump_modify     1 element Ni Co Cr Mn Fe
+
+
+set             type 1 type/fraction 2 0.2	2457
+set             type 1 type/fraction 3 0.25 1286
+set             type 1 type/fraction 4 0.33 3286
+set             type 1 type/fraction 5 0.50 5286
+
+
+fix				1 all setforce 0 0 0
+fix				2 outer atom/swap 1 10 2372 700.0 ke yes types 1 2
+fix				3 outer atom/swap 1 10 2727 700.0 ke yes types 2 3
+fix				4 outer atom/swap 1 10 2372 700.0 ke yes types 3 4
+fix				5 outer atom/swap 1 10 2372 700.0 ke yes types 4 5
+
+run				1000000

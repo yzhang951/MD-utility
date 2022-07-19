@@ -1,0 +1,13 @@
+#input CFG filename, mass of atom, and element name
+#		cfgfile						mass		element
+#	../HEA_MC/NiCo222.cfg			58.6934		Ni
+#	../HEA_MC/NiCo222.cfg			58.9332 	Co
+	../HEA_MC/NiCo82000.cfg			58.9332 	Co
+#	rectangular area, reduced coordinate
+#	xlo		xhi		ylo		yhi
+	0.2		0.8		0.2		0.8	
+#	output_name
+	CoRDF82000.dat
+#	parameter for RDF
+#	N_origin	dr		rmax/dr
+	100			0.02		2000

@@ -1,0 +1,74 @@
+units			metal
+boundary		p p p
+atom_style		atomic
+
+lattice			fcc 4.0782 origin 0 0 0 orient x 1 1 1 orient y 1 1 -2 orient z -1 1 0
+region			mybox block -50 200 -50 200 0 11.53488 units box
+create_box		1 mybox
+
+region			l1 plane 65 113 0 -1 0 0 units box
+region			l2 plane 65 113 0 -14 -55 0 units box
+region			l3 plane 0 0 0 1 0 0 units box
+region			l4 plane 0 0 0 0 1 0 units box
+region			l5 plane 92 45 0 -37 48 0 units box
+region			left intersect 5 l1 l2 l3 l4 l5
+create_atoms	1 region left
+
+
+region			m1 plane 92 45 0 -37 48 0 units box
+region			m2 plane 92 45 0 -68.2 -27.5 0 units box
+region			m3 plane 65 113 0 1 0 0 units box
+region			middle intersect 3 m1 m2 m3
+lattice			fcc 4.0782 origin 0 0 0 orient x -1 -1 -1 orient y 1 1 -2 orient z 1 -1 0
+create_atoms	1 region middle
+
+
+
+region			r1 plane 92 45 0 -17.7 59.1 0 units box
+region			r2 plane 92 45 0 68.2 27.5 0 units box
+region			r3 plane 65 113 0 34.8 -19.8 0 units box
+region			r4 plane 150 0 0 -1 0 0 units box
+region			r5 plane 0 150 0 0 -1 0 units box
+region			right intersect 5 r1 r2 r3 r4 r5
+lattice			fcc 4.0782 origin 0 0 0 orient x 20 20 47 orient y 47 47 -40 orient z -1 1 0
+create_atoms	1 region right
+
+region			left_fix block 0 10 INF INF INF INF units box
+region			right_fix block 140 150 INF INF INF INF units box
+
+group			right region right
+group			left_end region left_fix
+group			right_end region right_fix
+
+region			mc block 50 100 -49 199 0.01 11.52 units box
+group			mc region mc
+
+mass			1 197
+pair_style		eam
+pair_coeff		* * /home/yzhang951/Au_Al/Au_u3.eam
+delete_atoms	overlap 1.0 all all
+
+thermo			1000
+thermo_style	custom step temp etotal pxx pyy pzz pxy pyz pxz
+minimize		1e-20 1e-20 1000000 1000000
+fix				1 all box/relax z 0.0
+minimize		1e-20 1e-20 1000000 1000000
+unfix			1
+
+reset_timestep	0
+
+dump			1 all cfg 100 Au*.cfg mass type xs ys zs fx fy fz
+dump_modify		1 element Au sort id
+
+fix				1 left_end setforce 0 0 0 
+fix				2 right_end setforce 0 0 0 
+fix				3 mc gcmc 1 10 10 1 209514 300 -3.7 0.5 
+#### Rotation simulation
+
+label			loopa
+variable		a loop 50
+displace_atoms	right rotate 79 79 0 0 0 1 -0.1 units box
+#minimize		1e-20 1e-20 1000000 1000000
+run				1000
+next			a
+jump			in.relax loopa

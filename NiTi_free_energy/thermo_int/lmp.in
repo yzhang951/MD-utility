@@ -1,0 +1,25 @@
+# NiTi
+
+units			metal
+atom_style      atomic
+atom_modify		map yes
+
+boundary		p p p
+
+read_data       data.in
+replicate		6 6 6
+
+mass			1 58.69
+mass			2 47.867
+
+
+pair_style      deepmd 000.pb
+pair_coeff      * * 
+
+thermo_style    custom step temp pe lx ly lz xy xz yz pxx pyy pzz pxy pxz pyz 
+thermo          10
+
+velocity		all create 600 42589 rot yes dist gaussian
+fix				1 all nvt temp 300.0 300.0 0.1 
+run				3000
+

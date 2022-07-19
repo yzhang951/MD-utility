@@ -1,0 +1,61 @@
+units			metal
+boundary		p p p
+
+atom_style		full
+kspace_style	pppm 1.0e-6
+#kspace_modify	slab 3.0
+
+#neighbor		2.0 bin
+neigh_modify	one 10000
+comm_modify 	vel yes
+
+read_data		LiCoO2.data
+
+pair_style		buck/coul/long/cs 10.0
+pair_coeff		* *		0.0			1.0		0.0
+pair_coeff		4 6		426.48		0.3		0.0
+pair_coeff		5 6		1329.82		0.3087	0.0
+pair_coeff		6 6		22764.3		0.149	43.0
+
+bond_style		harmonic
+bond_coeff		1 9999.0 	0.0
+bond_coeff		2 196.3		0.0
+bond_coeff		3 57.0		0.0
+
+special_bonds	coul 0.0 1.0 1.0
+
+group			cores  type 1 2 3 
+group			shells type 4 5 6
+
+compute 		CSequ all temp/cs cores shells
+
+velocity		all create 300 124 bias yes temp CSequ
+velocity		all scale 300 temp CSequ
+
+fix				1 all nvt temp 300 300 0.01
+fix_modify		1 temp CSequ
+
+thermo			10
+thermo_style	custom step temp etotal lx ly lz pxx pyy pzz
+thermo_modify 	temp CSequ # modify thermo to regular pressure
+
+
+dump			1 cores cfg 1000 *.cfg mass type xs ys zs fx fy fz
+dump_modify		1 element Li Co O Li Co O sort id
+dump			2 cores atom 10 dump.atom
+
+
+minimize		1e-10 1e-10 100000 100000
+timestep		1e-4
+undump			2
+run				10000
+
+variable		z equal vdisplace(-10.0,1)
+fix				3 cores indent 0.1 cylinder x 114 v_z  10.0 units box
+fix				4 cores indent 0.1 cylinder x 0.0 75.0 10.0 units box
+
+thermo_style	custom step temp etotal v_z f_3[3] f_4[3]
+thermo_modify	temp CSequ
+
+restart			500000 bend.restart
+run				2000000

@@ -1,0 +1,29 @@
+units           metal
+boundary        p p p
+atom_style      atomic
+
+read_data       restart.in
+
+mass            1 63.546
+
+pair_style		eam/alloy
+pair_coeff      * * /home/yzhang951/lammps-7Aug2019/potentials/Cu01.eam.alloy Cu
+
+region			top block INF INF INF 155 INF INF units box
+group			top region top
+
+displace_atoms	top ramp x 0.0 366.564  x 0 2.54558 
+run				0
+
+delete_atoms	overlap 2.0 all all 
+
+thermo          100
+thermo_style    custom step etotal lx pxx pyy pzz pxy pyz pxz
+dump            1 all cfg 1000 Cu*.cfg mass type xs ys zs
+dump_modify     1 element Cu sort id
+
+minimize        1e-10 1e-10 1000 1000
+fix				1 all box/relax aniso 0.0
+minimize        1e-10 1e-10 1000 1000
+unfix			1
+minimize        1e-20 1e-20 1000000 1000000

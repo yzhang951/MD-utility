@@ -1,0 +1,21 @@
+#!/bin/bash
+rm	dat.stress
+for BE_U in {1..8}
+do
+	for NUM_OB in {1000..9000..2000}
+	do
+		for WIDTH in {10..90..20}
+		do
+			for SEED_lmp in {1..1}
+			do
+				export BIND_E=0.$BE_U
+				echo $BIND_E
+				echo $NUM_OB
+				echo $WIDTH
+				echo $SEED_lmp
+				mpiexec -np 16 lmp2019 -in input -var U $BIND_E -var num $NUM_OB -var w $WIDTH \
+					-var seed $SEED_lmp	
+			done
+		done
+	done
+done

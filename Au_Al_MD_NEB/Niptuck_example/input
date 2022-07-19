@@ -1,0 +1,52 @@
+units			metal
+boundary		p p p
+atom_style		atomic
+# Lattice constant 4.0782
+
+
+read_data		restart.in
+
+mass			1 196.967
+pair_style		eam
+pair_coeff		* * /home/yzhang951/Au_Al/Au_u3.eam
+
+
+region			1 plane 48  36.5  2.16   4.7091   1.664920 0 units box
+region			2 plane 51  36.5  2.16  -4.7091  -1.664920 0 units box
+region			3 plane 51  36.5  2.16   4.7091   1.664920 0 units box
+region			4 plane 54  36.5  2.16  -4.7091  -1.664920 0 units box
+
+region			p1 intersect 2 1 2
+region			p2 intersect 2 3 4
+
+group			1 region p1
+group			2 region p2
+group			3 intersect 1 2
+
+
+thermo			100
+thermo_style	custom step temp etotal lx pxx pyy pzz
+dump			1 all cfg 1000 Au*.cfg mass type xs ys zs
+dump_modify		1 element Au sort id
+
+fix				1 all deform 1 x scale 1.03 remap x
+run				1
+unfix			1
+
+minimize		1e-20 1e-20 1000000 1000000
+
+fix				1 1 setforce 0 0 0
+fix				2 2 setforce 0 0 0
+variable		a loop 10
+label			loop
+displace_atoms	1 move -0.01387   0.0392425  -0.072093 units box
+displace_atoms	2 move  0.01387  -0.0392425   0.072093 units box
+minimize		1e-20 1e-20 1000000 1000000
+
+next			a
+jump			input loop
+
+unfix			1
+unfix			2
+minimize		1e-20 1e-20 1000000 1000000
+

@@ -1,0 +1,44 @@
+# Dislocation cutting obstacle
+units			metal
+boundary		p p p
+atom_style		bond
+
+variable		d equal 4.0
+variable		dm equal $d+0.1
+variable        v equal -${eb}*$d
+
+neigh_modify	one 10000
+read_data		initial.neb
+
+mass			1 1.0
+mass			2 2.0
+
+pair_style		gauss 40.0
+pair_coeff		1 1 0.0 0.0 40
+pair_coeff		1 2 $v 0.0025 40 
+pair_coeff		2 2 0.0 0.0 0.1
+bond_style		table linear 100
+bond_coeff		1 /home/yzhang951/Labusch/string.bond LT
+
+group			disl type 1
+group			solute type 2
+compute			1 disl com
+
+variable		u uloop 16
+
+thermo			1000
+thermo_style	custom step etotal ebond epair c_1[1]
+
+dump            1 all cfg 100000 cfg/*_$u.cfg mass type xs ys zs vx vy vz fx fy fz
+dump_modify     1 element Au C sort id
+
+fix             1 solute setforce 0.0 0.0 0.0
+fix             2 disl setforce NULL 0.0 0.0
+variable        t equal ${sig}*2.8*1e6*$d/1e30/1.6e-19
+fix             3 disl addforce $t 0.0 0.0
+fix_modify      3 energy yes
+
+fix				4 disl neb 0.1
+min_style		fire
+
+neb				1e-10 1e-3 1000000 1000000 1000 final final.neb

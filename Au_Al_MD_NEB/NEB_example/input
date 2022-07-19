@@ -1,0 +1,27 @@
+# NEB for Au triple junction
+# Yin Zhang
+# March 25th, 2019
+
+units			metal
+boundary		p p p
+
+atom_style		atomic
+atom_modify		map array sort 0 0
+
+
+read_data		init.in
+pair_style		eam
+pair_coeff		* * /home/yzhang951/Au_Al/Au_u3.eam
+
+thermo			100
+thermo_style	custom step etotal pxx pyy pzz pxy pyz pxz
+
+variable		u equal part
+
+dump			1 all cfg 1000 Au*_$u.cfg mass type xs ys zs
+dump_modify		1 element Au sort id
+
+fix				1 all neb 100
+min_style		quickmin
+
+neb				0 0.01 1000000 1000000 100 final final.in

@@ -1,0 +1,2394 @@
+0.1
+1000
+10
+1
+LAMMPS (7 Aug 2019)
+WARNING: Shell command 'mkdir' failed with error 'File exists' (../input.cpp:1292)
+Created orthogonal box = (0 0 0) to (1000 1000 500)
+  2 by 4 by 2 MPI processor grid
+Lattice spacing in x,y,z = 4 4 4
+Created 250 atoms
+  create_atoms CPU = 0.00097566 secs
+250 atoms in group disl
+Created 1000 atoms
+  create_atoms CPU = 0.0010732 secs
+1000 atoms in group solute
+WARNING: 766 of 1000 force values in table are inconsistent with -dE/dr.
+  Should only be flagged at inflection points (../bond_table.cpp:395)
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) command create_bonds, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Create_bonds max distance > minimum neighbor cutoff (../create_bonds.cpp:186)
+Added 250 bonds, new total = 250
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.000519504 secs
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Inconsistent image flags (../domain.cpp:780)
+Per MPI rank memory allocation (min/avg/max) = 6.929 | 6.963 | 7.051 Mbytes
+Step TotEng E_bond E_pair c_1[1] 
+       0    1370.6864    1370.1354   0.55101098            0 
+    1000    1370.5844    1370.1691   0.41602184   0.26400104 
+    2000    1370.5594    1370.1741   0.38652735   0.48673572 
+    3000     1370.543     1370.176   0.36876462   0.69395789 
+    4000    1370.5303    1370.1769   0.35562645   0.89184154 
+    5000    1370.5196    1370.1773   0.34495204    1.0831754 
+    6000    1370.5101    1370.1774   0.33580601    1.2695242 
+    7000    1370.5013    1370.1772   0.32769501    1.4518751 
+    8000     1370.493    1370.1768   0.32032273    1.6308963 
+    9000    1370.4851    1370.1762   0.31349527    1.8070606 
+   10000    1370.4775    1370.1754   0.30707886    1.9807117 
+   11000      1370.47    1370.1744   0.30097839    2.1521037 
+   12000    1370.4628    1370.1735   0.29512509    2.3214268 
+   13000    1370.4557    1370.1724   0.28946891    2.4888245 
+   14000    1370.4488    1370.1714   0.28397331    2.6544056 
+   15000    1370.4419    1370.1704   0.27861175    2.8182529 
+   16000    1370.4353    1370.1694   0.27336505    2.9804299 
+   17000    1370.4287    1370.1684    0.2682195     3.140985 
+   18000    1370.4223    1370.1674   0.26316545    3.2999554 
+   19000    1370.4161    1370.1665   0.25819629    3.4573697 
+   20000    1370.4099    1370.1656   0.25330762    3.6132499 
+   21000    1370.4039    1370.1648   0.24849664    3.7676131 
+   22000    1370.3979     1370.164   0.24376176    3.9204725 
+   23000    1370.3921    1370.1632   0.23910216    4.0718387 
+   24000    1370.3864    1370.1625   0.23451762    4.2217202 
+   25000    1370.3809    1370.1618   0.23000827    4.3701241 
+   26000    1370.3754    1370.1611   0.22557446    4.5170564 
+   27000    1370.3701    1370.1605   0.22121663    4.6625228 
+   28000    1370.3648    1370.1599   0.21693526    4.8065286 
+   29000    1370.3597    1370.1593   0.21273079    4.9490788 
+   30000    1370.3546    1370.1588   0.20860358     5.090179 
+   31000    1370.3497    1370.1582   0.20455388    5.2298346 
+   32000    1370.3449    1370.1577   0.20058183    5.3680519 
+   33000    1370.3402    1370.1572   0.19668744    5.5048371 
+   34000    1370.3355    1370.1568   0.19287058    5.6401973 
+   35000     1370.331    1370.1563   0.18913099    5.7741399 
+   36000    1370.3266    1370.1559   0.18546828     5.906673 
+   37000    1370.3223    1370.1555   0.18188194    6.0378051 
+   38000     1370.318    1370.1551   0.17837134    6.1675454 
+   39000    1370.3139    1370.1547   0.17493576    6.2959035 
+   40000    1370.3098    1370.1543   0.17157437    6.4228895 
+   41000    1370.3058    1370.1539   0.16828626    6.5485141 
+   42000    1370.3019    1370.1535   0.16507044    6.6727883 
+   43000    1370.2981    1370.1532   0.16192588    6.7957237 
+   44000    1370.2944    1370.1528   0.15885145    6.9173321 
+   45000    1370.2908    1370.1525   0.15584601    7.0376256 
+   46000    1370.2872    1370.1522   0.15290837    7.1566168 
+   47000    1370.2837    1370.1519   0.15003728    7.2743185 
+   48000    1370.2803    1370.1515   0.14723152    7.3907438 
+   49000     1370.277    1370.1512   0.14448979    7.5059057 
+   50000    1370.2737    1370.1509   0.14181082    7.6198178 
+Loop time of 9.12873 on 16 procs for 50000 steps with 1250 atoms
+
+98.4% CPU use with 16 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = max iterations
+  Energy initial, next-to-last, final = 
+         1370.68640429      1370.27370571      1370.27370248
+  Force two-norm initial, final = 0.0352041 0.00179673
+  Force max component initial, final = 0.0196671 0.000123376
+  Final line search alpha, max atom move = 1 0.000123376
+  Iterations, force evaluations = 50000 50000
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.12529    | 1.4681     | 5.2881     | 148.3 | 16.08
+Bond    | 0.0056013  | 0.039331   | 0.15369    |  27.8 |  0.43
+Neigh   | 0.0014831  | 0.0015414  | 0.0016089  |   0.1 |  0.02
+Comm    | 1.7504     | 5.6392     | 6.9959     |  76.3 | 61.77
+Output  | 0.0018617  | 0.001915   | 0.0023684  |   0.3 |  0.02
+Modify  | 0.031744   | 0.057039   | 0.12416    |  12.8 |  0.62
+Other   |            | 1.922      |            |       | 21.05
+
+Nlocal:    78.125 ave 132 max 51 min
+Histogram: 4 5 3 0 0 0 0 0 2 2
+Nghost:    330.625 ave 364 max 287 min
+Histogram: 2 1 0 1 0 3 4 2 2 1
+Neighs:    459.312 ave 1641 max 25 min
+Histogram: 12 0 0 0 0 0 0 0 0 4
+
+Total # of neighbors = 7349
+Ave neighs/atom = 5.8792
+Ave special neighs/atom = 1.2
+Neighbor list builds = 11
+Dangerous builds = 0
+ERROR on proc 1: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 2: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 3: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 4: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 5: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 6: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 7: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 8: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 9: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 10: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 11: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 12: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 13: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 14: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 15: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 0: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 6 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+0.1
+1000
+30
+1
+LAMMPS (7 Aug 2019)
+WARNING: Shell command 'mkdir' failed with error 'File exists' (../input.cpp:1292)
+Created orthogonal box = (0 0 0) to (1000 1000 500)
+  2 by 4 by 2 MPI processor grid
+Lattice spacing in x,y,z = 4 4 4
+Created 250 atoms
+  create_atoms CPU = 0.000926041 secs
+250 atoms in group disl
+Created 1000 atoms
+  create_atoms CPU = 0.00121629 secs
+1000 atoms in group solute
+WARNING: 766 of 1000 force values in table are inconsistent with -dE/dr.
+  Should only be flagged at inflection points (../bond_table.cpp:395)
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) command create_bonds, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Create_bonds max distance > minimum neighbor cutoff (../create_bonds.cpp:186)
+Added 250 bonds, new total = 250
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.000840655 secs
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Inconsistent image flags (../domain.cpp:780)
+Per MPI rank memory allocation (min/avg/max) = 6.929 | 6.963 | 7.051 Mbytes
+Step TotEng E_bond E_pair c_1[1] 
+       0    1389.1088    1370.1354    18.973361            0 
+    1000    1387.6978    1370.3761    17.324496    1.1117647 
+    2000    1386.8821    1370.5862    16.301431    2.2038587 
+    3000    1386.3181    1370.8077    15.518477    3.2609444 
+    4000    1385.8942    1371.0087    14.896215    4.2787273 
+    5000    1385.5502    1371.1805    14.382832    5.2563126 
+    6000    1385.2565    1371.3257    13.946241    6.1926272 
+    7000    1384.9996    1371.4493    13.567994    7.0853078 
+    8000    1384.7744    1371.5556    13.238623    7.9311353 
+    9000    1384.5786    1371.6476    12.952857    8.7267521 
+   10000    1384.4107    1371.7268    12.707511    9.4695217 
+   11000    1384.2686    1371.7945    12.499443    10.157897 
+   12000    1384.1499    1371.8516    12.325338    10.791684 
+   13000    1384.0519     1371.899    12.181376    11.371848 
+   14000    1383.9717    1371.9378    12.063609    11.900345 
+   15000    1383.9064    1371.9692    11.968199    12.379867 
+   16000    1383.8536    1371.9942    11.891438    12.813557 
+   17000     1383.811    1372.0139    11.830177    13.204801 
+   18000    1383.7768    1372.0291    11.781518     13.55704 
+   19000    1383.7492    1372.0409    11.743063    13.873648 
+   20000    1383.7272    1372.0497    11.712882    14.157872 
+   21000    1383.7095    1372.0563    11.689243    14.412777 
+   22000    1383.6954    1372.0611    11.670862    14.641226 
+   23000    1383.6841    1372.0646    11.656644    14.845856 
+   23310    1383.6811    1372.0654    11.652948    14.904393 
+Loop time of 4.8696 on 16 procs for 23310 steps with 1250 atoms
+
+96.9% CPU use with 16 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+         1389.10875384      1383.68107639      1383.68107639
+  Force two-norm initial, final = 0.0600015 0.00306802
+  Force max component initial, final = 0.0114959 0.000272111
+  Final line search alpha, max atom move = 0.000976562 2.65733e-07
+  Iterations, force evaluations = 23310 23324
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.07814    | 0.78161    | 2.725      |  97.3 | 16.05
+Bond    | 0.0028193  | 0.019719   | 0.072813   |  17.3 |  0.40
+Neigh   | 0.0038045  | 0.0039583  | 0.0040195  |   0.1 |  0.08
+Comm    | 0.93589    | 2.8577     | 3.6431     |  52.2 | 58.68
+Output  | 0.00089474 | 0.00092796 | 0.0011054  |   0.0 |  0.02
+Modify  | 0.018276   | 0.029714   | 0.060705   |   7.8 |  0.61
+Other   |            | 1.176      |            |       | 24.15
+
+Nlocal:    78.125 ave 132 max 51 min
+Histogram: 4 5 3 0 0 0 0 0 2 2
+Nghost:    330.625 ave 364 max 287 min
+Histogram: 2 1 0 1 0 3 4 2 2 1
+Neighs:    461.562 ave 1642 max 24 min
+Histogram: 12 0 0 0 0 0 0 0 0 4
+
+Total # of neighbors = 7385
+Ave neighs/atom = 5.908
+Ave special neighs/atom = 1.2
+Neighbor list builds = 31
+Dangerous builds = 0
+ERROR on proc 0: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 1: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 2: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 3: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 4: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 5: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 6: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 7: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 8: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 9: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 10: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 11: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 12: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 13: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 14: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 15: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 5 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+0.1
+1000
+50
+1
+LAMMPS (7 Aug 2019)
+WARNING: Shell command 'mkdir' failed with error 'File exists' (../input.cpp:1292)
+Created orthogonal box = (0 0 0) to (1000 1000 500)
+  2 by 4 by 2 MPI processor grid
+Lattice spacing in x,y,z = 4 4 4
+Created 250 atoms
+  create_atoms CPU = 0.000943348 secs
+250 atoms in group disl
+Created 1000 atoms
+  create_atoms CPU = 0.00101307 secs
+1000 atoms in group solute
+WARNING: 766 of 1000 force values in table are inconsistent with -dE/dr.
+  Should only be flagged at inflection points (../bond_table.cpp:395)
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) command create_bonds, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Create_bonds max distance > minimum neighbor cutoff (../create_bonds.cpp:186)
+Added 250 bonds, new total = 250
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.000543973 secs
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Inconsistent image flags (../domain.cpp:780)
+Per MPI rank memory allocation (min/avg/max) = 6.929 | 6.963 | 7.051 Mbytes
+Step TotEng E_bond E_pair c_1[1] 
+       0    1464.0846    1370.1354    93.949249            0 
+      16    1464.0494    1370.1358    93.913692 0.0099993814 
+Loop time of 0.0337075 on 16 procs for 16 steps with 1250 atoms
+
+96.9% CPU use with 16 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+         1464.08464207      1464.04943631      1464.04943631
+  Force two-norm initial, final = 0.0703859 0.0688662
+  Force max component initial, final = 0.0108623 0.0104292
+  Final line search alpha, max atom move = 1.90735e-06 1.98921e-08
+  Iterations, force evaluations = 16 144
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.0005132  | 0.004593   | 0.020973   |   8.9 | 13.63
+Bond    | 1.6951e-05 | 0.00012397 | 0.00061362 |   0.0 |  0.37
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.0067288  | 0.021474   | 0.027519   |   4.6 | 63.71
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0.00010032 | 0.00017986 | 0.00054872 |   0.0 |  0.53
+Other   |            | 0.007336   |            |       | 21.76
+
+Nlocal:    78.125 ave 132 max 51 min
+Histogram: 4 5 3 0 0 0 0 0 2 2
+Nghost:    330.625 ave 364 max 287 min
+Histogram: 2 1 0 1 0 3 4 2 2 1
+Neighs:    459.562 ave 1642 max 26 min
+Histogram: 12 0 0 0 0 0 0 0 0 4
+
+Total # of neighbors = 7353
+Ave neighs/atom = 5.8824
+Ave special neighs/atom = 1.2
+Neighbor list builds = 0
+Dangerous builds = 0
+ERROR on proc 1: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 2: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 3: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 4: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 5: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 6: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 7: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 8: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 9: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 10: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 11: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 12: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 13: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 14: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 15: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 0: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 15 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+0.1
+1000
+70
+1
+LAMMPS (7 Aug 2019)
+WARNING: Shell command 'mkdir' failed with error 'File exists' (../input.cpp:1292)
+Created orthogonal box = (0 0 0) to (1000 1000 500)
+  2 by 4 by 2 MPI processor grid
+Lattice spacing in x,y,z = 4 4 4
+Created 250 atoms
+  create_atoms CPU = 0.00142851 secs
+250 atoms in group disl
+Created 1000 atoms
+  create_atoms CPU = 0.00113637 secs
+1000 atoms in group solute
+WARNING: 766 of 1000 force values in table are inconsistent with -dE/dr.
+  Should only be flagged at inflection points (../bond_table.cpp:395)
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) command create_bonds, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Create_bonds max distance > minimum neighbor cutoff (../create_bonds.cpp:186)
+Added 250 bonds, new total = 250
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.000571863 secs
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Inconsistent image flags (../domain.cpp:780)
+Per MPI rank memory allocation (min/avg/max) = 6.929 | 6.963 | 7.051 Mbytes
+Step TotEng E_bond E_pair c_1[1] 
+       0    1586.9556    1370.1354    216.82019            0 
+      26    1586.9216     1370.136    216.78566   0.01265708 
+Loop time of 0.0499143 on 16 procs for 26 steps with 1250 atoms
+
+98.3% CPU use with 16 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+          1586.9555857      1586.92163247      1586.92163247
+  Force two-norm initial, final = 0.0612237 0.0588594
+  Force max component initial, final = 0.00915689 0.00781518
+  Final line search alpha, max atom move = 1.90735e-06 1.49063e-08
+  Iterations, force evaluations = 26 230
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.00080953 | 0.0087113  | 0.031636   |  12.2 | 17.45
+Bond    | 2.77e-05   | 0.00021646 | 0.00083349 |   0.0 |  0.43
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.0083517  | 0.031259   | 0.039886   |   6.6 | 62.63
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0.00014518 | 0.00031197 | 0.00072656 |   0.0 |  0.63
+Other   |            | 0.009415   |            |       | 18.86
+
+Nlocal:    78.125 ave 132 max 51 min
+Histogram: 4 5 3 0 0 0 0 0 2 2
+Nghost:    330.625 ave 364 max 287 min
+Histogram: 2 1 0 1 0 3 4 2 2 1
+Neighs:    459.562 ave 1642 max 26 min
+Histogram: 12 0 0 0 0 0 0 0 0 4
+
+Total # of neighbors = 7353
+Ave neighs/atom = 5.8824
+Ave special neighs/atom = 1.2
+Neighbor list builds = 0
+Dangerous builds = 0
+ERROR on proc 6: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 8: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 9: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 10: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 11: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 12: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 13: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 14: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 15: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 0: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 1: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 2: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 3: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 4: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 5: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 7: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 15 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+0.1
+1000
+90
+1
+LAMMPS (7 Aug 2019)
+WARNING: Shell command 'mkdir' failed with error 'File exists' (../input.cpp:1292)
+Created orthogonal box = (0 0 0) to (1000 1000 500)
+  2 by 4 by 2 MPI processor grid
+Lattice spacing in x,y,z = 4 4 4
+Created 250 atoms
+  create_atoms CPU = 0.00108611 secs
+250 atoms in group disl
+Created 1000 atoms
+  create_atoms CPU = 0.00108729 secs
+1000 atoms in group solute
+WARNING: 766 of 1000 force values in table are inconsistent with -dE/dr.
+  Should only be flagged at inflection points (../bond_table.cpp:395)
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) command create_bonds, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Create_bonds max distance > minimum neighbor cutoff (../create_bonds.cpp:186)
+Added 250 bonds, new total = 250
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.000618008 secs
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Inconsistent image flags (../domain.cpp:780)
+Per MPI rank memory allocation (min/avg/max) = 6.929 | 6.963 | 7.051 Mbytes
+Step TotEng E_bond E_pair c_1[1] 
+       0     1700.843    1370.1354    330.70761            0 
+      85    1700.1139    1370.1487    329.96539  0.075630294 
+Loop time of 0.0543381 on 16 procs for 85 steps with 1250 atoms
+
+97.0% CPU use with 16 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+         1700.84299953      1700.11385722      1700.11385722
+  Force two-norm initial, final = 0.0525489 0.0421132
+  Force max component initial, final = 0.00761535 0.00523745
+  Final line search alpha, max atom move = 3.8147e-06 1.99793e-08
+  Iterations, force evaluations = 85 261
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.0011363  | 0.0096823  | 0.033525   |  12.7 | 17.82
+Bond    | 3.3304e-05 | 0.00024755 | 0.00094689 |   0.0 |  0.46
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.0094139  | 0.034439   | 0.044073   |   6.8 | 63.38
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0.00017522 | 0.00034755 | 0.00084158 |   0.0 |  0.64
+Other   |            | 0.009621   |            |       | 17.71
+
+Nlocal:    78.125 ave 132 max 51 min
+Histogram: 4 5 3 0 0 0 0 0 2 2
+Nghost:    330.625 ave 364 max 287 min
+Histogram: 2 1 0 1 0 3 4 2 2 1
+Neighs:    459.562 ave 1642 max 26 min
+Histogram: 12 0 0 0 0 0 0 0 0 4
+
+Total # of neighbors = 7353
+Ave neighs/atom = 5.8824
+Ave special neighs/atom = 1.2
+Neighbor list builds = 0
+Dangerous builds = 0
+ERROR on proc 1: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 2: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 3: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 4: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 5: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 6: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 7: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 8: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 9: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 10: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 11: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 12: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 13: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 14: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 15: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 0: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 14 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+0.1
+3000
+10
+1
+LAMMPS (7 Aug 2019)
+WARNING: Shell command 'mkdir' failed with error 'File exists' (../input.cpp:1292)
+Created orthogonal box = (0 0 0) to (1000 1000 500)
+  2 by 4 by 2 MPI processor grid
+Lattice spacing in x,y,z = 4 4 4
+Created 250 atoms
+  create_atoms CPU = 0.000952488 secs
+250 atoms in group disl
+Created 3000 atoms
+  create_atoms CPU = 0.0010522 secs
+3000 atoms in group solute
+WARNING: 766 of 1000 force values in table are inconsistent with -dE/dr.
+  Should only be flagged at inflection points (../bond_table.cpp:395)
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) command create_bonds, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Create_bonds max distance > minimum neighbor cutoff (../create_bonds.cpp:186)
+Added 250 bonds, new total = 250
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.000547107 secs
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Inconsistent image flags (../domain.cpp:780)
+Per MPI rank memory allocation (min/avg/max) = 6.984 | 7.021 | 7.114 Mbytes
+Step TotEng E_bond E_pair c_1[1] 
+       0    1372.0442    1370.1354    1.9088097            0 
+    1000    1371.6357    1370.3274    1.3085461  0.097879786 
+    2000    1371.6031    1370.3832    1.2204085   0.19420086 
+    3000    1371.5931    1370.4033    1.1905246   0.29534338 
+    4000    1371.5873    1370.4113    1.1770187   0.39617769 
+    5000    1371.5831     1370.415     1.169341   0.49324675 
+    6000    1371.5798    1370.4172    1.1641027     0.584768 
+    7000    1371.5772    1370.4188    1.1600752   0.66997845 
+    8000     1371.575    1370.4201    1.1567659     0.748696 
+    9000    1371.5733    1370.4214    1.1539508   0.82106043 
+   10000    1371.5718    1370.4225     1.151511   0.88738201 
+   11000    1371.5706    1370.4236    1.1493731   0.94805279 
+   12000    1371.5696    1370.4247    1.1474858    1.0034949 
+   13000    1371.5688    1370.4256    1.1458109    1.0541308 
+   14000    1371.5681    1370.4266    1.1443179    1.1003674 
+   15000    1371.5676    1370.4274    1.1429824    1.1425868 
+   16000    1371.5671    1370.4283    1.1417844    1.1811438 
+   17000    1371.5667     1370.429     1.140707    1.2163639 
+   18000    1371.5664    1370.4298    1.1397358    1.2485449 
+   19000    1371.5661    1370.4304    1.1388589    1.2779577 
+   20000    1371.5659    1370.4311    1.1380658    1.3048486 
+   21000    1371.5657    1370.4317    1.1373474    1.3294414 
+   22000    1371.5655    1370.4322    1.1366958     1.351939 
+   23000    1371.5654    1370.4327    1.1361042    1.3725257 
+   24000    1371.5653    1370.4332    1.1355666    1.3913686 
+   25000    1371.5652    1370.4336    1.1350775    1.4086198 
+   26000    1371.5651     1370.434    1.1346322    1.4244174 
+   27000     1371.565    1370.4344    1.1342265    1.4388868 
+   28000     1371.565    1370.4348    1.1338566    1.4521423 
+   29000    1371.5649    1370.4351    1.1335192     1.464288 
+   30000    1371.5649    1370.4354    1.1332113    1.4754187 
+   31000    1371.5649    1370.4356      1.13293    1.4856207 
+   32000    1371.5648    1370.4359    1.1326731    1.4949728 
+   33000    1371.5648    1370.4361    1.1324383     1.503547 
+   34000    1371.5648    1370.4363    1.1322235    1.5114089 
+   35000    1371.5648    1370.4365    1.1320272    1.5186184 
+   36000    1371.5648    1370.4367    1.1318475    1.5252304 
+   37000    1371.5647    1370.4369     1.131683    1.5312949 
+   38000    1371.5647     1370.437    1.1315325    1.5368578 
+   39000    1371.5647    1370.4372    1.1313946    1.5419609 
+   40000    1371.5647    1370.4373    1.1312684    1.5466425 
+   41000    1371.5647    1370.4374    1.1311527    1.5509378 
+   42000    1371.5647    1370.4376    1.1310468    1.5548789 
+   43000    1371.5647    1370.4377    1.1309497    1.5584951 
+   44000    1371.5647    1370.4377    1.1308607    1.5618135 
+   45000    1371.5647    1370.4378    1.1307791    1.5648586 
+   46000    1371.5647    1370.4379    1.1307043    1.5676532 
+   47000    1371.5647     1370.438    1.1306357    1.5702179 
+   48000    1371.5647    1370.4381    1.1305728    1.5725717 
+   49000    1371.5647    1370.4381    1.1305152     1.574732 
+   50000    1371.5647    1370.4382    1.1304623    1.5767149 
+Loop time of 14.3674 on 16 procs for 50000 steps with 3250 atoms
+
+95.0% CPU use with 16 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = max iterations
+  Energy initial, next-to-last, final = 
+         1372.04420299       1371.5646922      1371.56469219
+  Force two-norm initial, final = 0.0729827 3.37457e-05
+  Force max component initial, final = 0.0304066 3.288e-06
+  Final line search alpha, max atom move = 1 3.288e-06
+  Iterations, force evaluations = 50000 50000
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.78156    | 3.2685     | 8.3772     | 119.3 | 22.75
+Bond    | 0.0079797  | 0.045948   | 0.16815    |  25.0 |  0.32
+Neigh   | 0.0020718  | 0.002103   | 0.0021336  |   0.0 |  0.01
+Comm    | 2.8971     | 7.7791     | 10.688     |  81.3 | 54.14
+Output  | 0.002316   | 0.0023836  | 0.0029685  |   0.3 |  0.02
+Modify  | 0.0655     | 0.11554    | 0.20252    |  10.8 |  0.80
+Other   |            | 3.154      |            |       | 21.95
+
+Nlocal:    203.125 ave 247 max 167 min
+Histogram: 1 2 2 3 2 2 0 0 2 2
+Nghost:    786.562 ave 814 max 738 min
+Histogram: 1 0 1 1 1 2 4 1 2 3
+Neighs:    744.562 ave 1945 max 151 min
+Histogram: 4 5 2 1 0 0 1 0 1 2
+
+Total # of neighbors = 11913
+Ave neighs/atom = 3.66554
+Ave special neighs/atom = 0.461538
+Neighbor list builds = 6
+Dangerous builds = 0
+ERROR on proc 4: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 5: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 6: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 7: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 8: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 9: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 10: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 11: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 12: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 13: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 14: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 15: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 0: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 1: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 2: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 3: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 8 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+0.1
+3000
+30
+1
+LAMMPS (7 Aug 2019)
+WARNING: Shell command 'mkdir' failed with error 'File exists' (../input.cpp:1292)
+Created orthogonal box = (0 0 0) to (1000 1000 500)
+  2 by 4 by 2 MPI processor grid
+Lattice spacing in x,y,z = 4 4 4
+Created 250 atoms
+  create_atoms CPU = 0.000962972 secs
+250 atoms in group disl
+Created 3000 atoms
+  create_atoms CPU = 0.00113076 secs
+3000 atoms in group solute
+WARNING: 766 of 1000 force values in table are inconsistent with -dE/dr.
+  Should only be flagged at inflection points (../bond_table.cpp:395)
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) command create_bonds, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Create_bonds max distance > minimum neighbor cutoff (../create_bonds.cpp:186)
+Added 250 bonds, new total = 250
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.000600138 secs
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Inconsistent image flags (../domain.cpp:780)
+Per MPI rank memory allocation (min/avg/max) = 6.984 | 7.021 | 7.114 Mbytes
+Step TotEng E_bond E_pair c_1[1] 
+       0     1462.083    1370.1354    91.947649            0 
+    1000    1454.3791    1370.9085    83.481518    4.3503362 
+    2000    1448.3722    1371.4549    76.938841     8.601253 
+    3000    1443.3159    1372.0215    71.325768    12.522126 
+    4000    1439.8446      1372.61    67.274298    15.866131 
+    5000     1437.814    1373.0102     64.85023    18.547647 
+    6000    1436.6388    1373.1932     63.49723    20.663355 
+    7000    1435.9115     1373.228    62.739324    22.350415 
+    8000    1435.4273    1373.1821    62.304561     23.71931 
+    9000    1435.0895    1373.0995     62.05216    24.846958 
+   10000    1434.8483    1373.0055    61.907286    25.785321 
+   11000    1434.6749     1372.913    61.828356    26.570677 
+   12000    1434.5505    1372.8282    61.790364    27.229549 
+   13000    1434.4619    1372.7535      61.7779    27.782464 
+   14000    1434.3992    1372.6892    61.780583    28.246029 
+   15000    1434.3551    1372.6349    61.791863    28.634164 
+   16000    1434.3244    1372.5895    61.807319    28.958628 
+   17000     1434.303    1372.5518    61.824213    29.229413 
+   18000    1434.2882    1372.5208    61.841076    29.455044 
+   18599    1434.2817     1372.505    61.850584      29.5706 
+Loop time of 4.97692 on 16 procs for 18599 steps with 3250 atoms
+
+94.0% CPU use with 16 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+         1462.08304214      1434.28167891      1434.28167891
+  Force two-norm initial, final = 0.116286 0.00313666
+  Force max component initial, final = 0.0183693 0.000296838
+  Final line search alpha, max atom move = 0.000976562 2.89881e-07
+  Iterations, force evaluations = 18599 18633
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.17244    | 1.224      | 2.9392     |  81.8 | 24.59
+Bond    | 0.0027231  | 0.016707   | 0.059677   |  16.9 |  0.34
+Neigh   | 0.016042   | 0.016265   | 0.016584   |   0.1 |  0.33
+Comm    | 1.0181     | 2.743      | 3.8525     |  55.6 | 55.11
+Output  | 0.00073778 | 0.00076481 | 0.00094027 |   0.0 |  0.02
+Modify  | 0.026624   | 0.043174   | 0.069013   |   5.9 |  0.87
+Other   |            | 0.933      |            |       | 18.75
+
+Nlocal:    203.125 ave 248 max 167 min
+Histogram: 1 3 2 2 3 1 0 0 2 2
+Nghost:    786.562 ave 814 max 746 min
+Histogram: 1 1 2 0 0 4 1 2 2 3
+Neighs:    764.688 ave 2161 max 59 min
+Histogram: 6 3 1 2 0 0 0 0 0 4
+
+Total # of neighbors = 12235
+Ave neighs/atom = 3.76462
+Ave special neighs/atom = 0.461538
+Neighbor list builds = 52
+Dangerous builds = 0
+ERROR on proc 2: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 3: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 4: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 5: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 6: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 7: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 8: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 9: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 10: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 11: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 12: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 13: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 14: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 15: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 0: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 1: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 11 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+0.1
+3000
+50
+1
+LAMMPS (7 Aug 2019)
+WARNING: Shell command 'mkdir' failed with error 'File exists' (../input.cpp:1292)
+Created orthogonal box = (0 0 0) to (1000 1000 500)
+  2 by 4 by 2 MPI processor grid
+Lattice spacing in x,y,z = 4 4 4
+Created 250 atoms
+  create_atoms CPU = 0.000932814 secs
+250 atoms in group disl
+Created 3000 atoms
+  create_atoms CPU = 0.00110945 secs
+3000 atoms in group solute
+WARNING: 766 of 1000 force values in table are inconsistent with -dE/dr.
+  Should only be flagged at inflection points (../bond_table.cpp:395)
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) command create_bonds, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Create_bonds max distance > minimum neighbor cutoff (../create_bonds.cpp:186)
+Added 250 bonds, new total = 250
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.000512272 secs
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Inconsistent image flags (../domain.cpp:780)
+Per MPI rank memory allocation (min/avg/max) = 6.984 | 7.021 | 7.114 Mbytes
+Step TotEng E_bond E_pair c_1[1] 
+       0    1748.1072    1370.1354    377.97178            0 
+      31    1747.6043    1370.1416    377.46306   0.11569953 
+Loop time of 0.0514198 on 16 procs for 31 steps with 3250 atoms
+
+96.2% CPU use with 16 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+         1748.10717654      1747.60432883      1747.60432883
+  Force two-norm initial, final = 0.144016 0.139685
+  Force max component initial, final = 0.0182309 0.0170153
+  Final line search alpha, max atom move = 4.76837e-07 8.11353e-09
+  Iterations, force evaluations = 31 203
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.0020327  | 0.012756   | 0.033255   |   8.4 | 24.81
+Bond    | 3.1015e-05 | 0.00017496 | 0.00063091 |   0.0 |  0.34
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.010285   | 0.029995   | 0.041797   |   5.5 | 58.33
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0.00027444 | 0.00045788 | 0.00074618 |   0.0 |  0.89
+Other   |            | 0.008036   |            |       | 15.63
+
+Nlocal:    203.125 ave 248 max 167 min
+Histogram: 1 3 2 2 3 1 0 0 2 2
+Nghost:    786.562 ave 814 max 746 min
+Histogram: 1 1 2 0 0 4 1 2 2 3
+Neighs:    742.75 ave 2085 max 114 min
+Histogram: 6 5 1 0 0 0 0 0 0 4
+
+Total # of neighbors = 11884
+Ave neighs/atom = 3.65662
+Ave special neighs/atom = 0.461538
+Neighbor list builds = 0
+Dangerous builds = 0
+ERROR on proc 2: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 4: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 6: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 8: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 9: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 10: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 11: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 12: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 13: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 14: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 15: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 0: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 1: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 3: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 5: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 7: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+0.1
+3000
+70
+1
+LAMMPS (7 Aug 2019)
+WARNING: Shell command 'mkdir' failed with error 'File exists' (../input.cpp:1292)
+Created orthogonal box = (0 0 0) to (1000 1000 500)
+  2 by 4 by 2 MPI processor grid
+Lattice spacing in x,y,z = 4 4 4
+Created 250 atoms
+  create_atoms CPU = 0.00139958 secs
+250 atoms in group disl
+Created 3000 atoms
+  create_atoms CPU = 0.0013299 secs
+3000 atoms in group solute
+WARNING: 766 of 1000 force values in table are inconsistent with -dE/dr.
+  Should only be flagged at inflection points (../bond_table.cpp:395)
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) command create_bonds, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Create_bonds max distance > minimum neighbor cutoff (../create_bonds.cpp:186)
+Added 250 bonds, new total = 250
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.000626443 secs
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Inconsistent image flags (../domain.cpp:780)
+Per MPI rank memory allocation (min/avg/max) = 6.984 | 7.021 | 7.114 Mbytes
+Step TotEng E_bond E_pair c_1[1] 
+       0    2176.5462    1370.1354     806.4108            0 
+      31    2175.6091    1370.1412    805.46814  0.071868351 
+Loop time of 0.066302 on 16 procs for 31 steps with 3250 atoms
+
+96.1% CPU use with 16 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+         2176.54619728      2175.60912869      2175.60912869
+  Force two-norm initial, final = 0.155713 0.150144
+  Force max component initial, final = 0.0223894 0.0201555
+  Final line search alpha, max atom move = 4.76837e-07 9.61091e-09
+  Iterations, force evaluations = 31 243
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.0043238  | 0.016957   | 0.040448   |   9.7 | 25.58
+Bond    | 3.1783e-05 | 0.00024283 | 0.00095786 |   0.0 |  0.37
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.0142     | 0.037972   | 0.050729   |   6.6 | 57.27
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0.00033573 | 0.00060219 | 0.0010056  |   0.0 |  0.91
+Other   |            | 0.01053    |            |       | 15.88
+
+Nlocal:    203.125 ave 248 max 167 min
+Histogram: 1 3 2 2 3 1 0 0 2 2
+Nghost:    786.562 ave 814 max 746 min
+Histogram: 1 1 2 0 0 4 1 2 2 3
+Neighs:    742.75 ave 2085 max 114 min
+Histogram: 6 5 1 0 0 0 0 0 0 4
+
+Total # of neighbors = 11884
+Ave neighs/atom = 3.65662
+Ave special neighs/atom = 0.461538
+Neighbor list builds = 0
+Dangerous builds = 0
+ERROR on proc 2: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 4: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 8: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 9: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 10: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 11: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 12: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 13: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 14: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 15: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 0: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 1: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 3: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 5: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 6: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 7: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 8 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+0.1
+3000
+90
+1
+LAMMPS (7 Aug 2019)
+WARNING: Shell command 'mkdir' failed with error 'File exists' (../input.cpp:1292)
+Created orthogonal box = (0 0 0) to (1000 1000 500)
+  2 by 4 by 2 MPI processor grid
+Lattice spacing in x,y,z = 4 4 4
+Created 250 atoms
+  create_atoms CPU = 0.00106165 secs
+250 atoms in group disl
+Created 3000 atoms
+  create_atoms CPU = 0.00115481 secs
+3000 atoms in group solute
+WARNING: 766 of 1000 force values in table are inconsistent with -dE/dr.
+  Should only be flagged at inflection points (../bond_table.cpp:395)
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) command create_bonds, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Create_bonds max distance > minimum neighbor cutoff (../create_bonds.cpp:186)
+Added 250 bonds, new total = 250
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.000592874 secs
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Inconsistent image flags (../domain.cpp:780)
+Per MPI rank memory allocation (min/avg/max) = 6.984 | 7.021 | 7.114 Mbytes
+Step TotEng E_bond E_pair c_1[1] 
+       0    2564.8309    1370.1354    1194.6955            0 
+      36    2563.3029    1370.1442    1193.1588  0.063744114 
+Loop time of 0.0803824 on 16 procs for 36 steps with 3250 atoms
+
+95.7% CPU use with 16 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+         2564.83088567      2563.30288175      2563.30288175
+  Force two-norm initial, final = 0.144222 0.136493
+  Force max component initial, final = 0.0217555 0.0187737
+  Final line search alpha, max atom move = 4.76837e-07 8.95201e-09
+  Iterations, force evaluations = 36 266
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.0029657  | 0.018375   | 0.051135   |  11.2 | 22.86
+Bond    | 3.8399e-05 | 0.00025546 | 0.00094132 |   0.0 |  0.32
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.015318   | 0.048459   | 0.066387   |   7.3 | 60.29
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0.00039539 | 0.00063038 | 0.0011619  |   0.0 |  0.78
+Other   |            | 0.01266    |            |       | 15.75
+
+Nlocal:    203.125 ave 248 max 167 min
+Histogram: 1 3 2 2 3 1 0 0 2 2
+Nghost:    786.562 ave 814 max 746 min
+Histogram: 1 1 2 0 0 4 1 2 2 3
+Neighs:    742.75 ave 2085 max 114 min
+Histogram: 6 5 1 0 0 0 0 0 0 4
+
+Total # of neighbors = 11884
+Ave neighs/atom = 3.65662
+Ave special neighs/atom = 0.461538
+Neighbor list builds = 0
+Dangerous builds = 0
+ERROR on proc 1: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 2: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 3: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 4: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 5: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 6: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 7: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 8: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 9: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 10: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 11: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 12: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 13: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 14: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 15: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 0: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+0.1
+5000
+10
+1
+LAMMPS (7 Aug 2019)
+WARNING: Shell command 'mkdir' failed with error 'File exists' (../input.cpp:1292)
+Created orthogonal box = (0 0 0) to (1000 1000 500)
+  2 by 4 by 2 MPI processor grid
+Lattice spacing in x,y,z = 4 4 4
+Created 250 atoms
+  create_atoms CPU = 0.00102843 secs
+250 atoms in group disl
+Created 5000 atoms
+  create_atoms CPU = 0.00141441 secs
+5000 atoms in group solute
+WARNING: 766 of 1000 force values in table are inconsistent with -dE/dr.
+  Should only be flagged at inflection points (../bond_table.cpp:395)
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) command create_bonds, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Create_bonds max distance > minimum neighbor cutoff (../create_bonds.cpp:186)
+Added 250 bonds, new total = 250
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.00266332 secs
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Inconsistent image flags (../domain.cpp:780)
+Per MPI rank memory allocation (min/avg/max) = 7.04 | 7.083 | 7.179 Mbytes
+Step TotEng E_bond E_pair c_1[1] 
+       0    1373.3054    1370.1354    3.1699821            0 
+    1000    1372.9207    1370.3506    2.5704408   0.13998782 
+    2000    1372.8975    1370.3757    2.5223399   0.22632074 
+    3000      1372.89     1370.386    2.5046874   0.27964903 
+    4000    1372.8873    1370.3922    2.4959354   0.31466998 
+    5000    1372.8864     1370.396    2.4912142   0.33919279 
+    6000     1372.886    1370.3983    2.4885766   0.35733165 
+    7000    1372.8859    1370.3997    2.4870764   0.37133739 
+    8000    1372.8858    1370.4005    2.4862157   0.38250036 
+    9000    1372.8858     1370.401    2.4857209   0.39159946 
+   10000    1372.8857    1370.4013    2.4854374   0.39913147 
+   11000    1372.8857    1370.4014    2.4852766   0.40543142 
+   12000    1372.8857    1370.4015    2.4851871   0.41073754 
+   13000    1372.8857    1370.4016    2.4851388   0.41522726 
+   14000    1372.8857    1370.4016    2.4851141   0.41903782 
+   15000    1372.8857    1370.4016     2.485103   0.42227854 
+   16000    1372.8857    1370.4016    2.4850994   0.42503838 
+   17000    1372.8857    1370.4016    2.4850997   0.42739081 
+   18000    1372.8857    1370.4016    2.4851021    0.4293972 
+   19000    1372.8857    1370.4016    2.4851054   0.43110914 
+   20000    1372.8857    1370.4016     2.485109   0.43257026 
+   21000    1372.8857    1370.4016    2.4851125   0.43381752 
+   22000    1372.8857    1370.4016    2.4851158   0.43488237 
+   23000    1372.8857    1370.4016    2.4851187   0.43579157 
+   24000    1372.8857    1370.4016    2.4851213   0.43656791 
+   25000    1372.8857    1370.4016    2.4851237   0.43723083 
+   26000    1372.8857    1370.4016    2.4851257   0.43779692 
+   27000    1372.8857    1370.4016    2.4851274   0.43828033 
+   28000    1372.8857    1370.4016    2.4851289   0.43869315 
+   29000    1372.8857    1370.4016    2.4851302   0.43904568 
+   30000    1372.8857    1370.4016    2.4851313   0.43934673 
+   31000    1372.8857    1370.4016    2.4851322   0.43960382 
+   32000    1372.8857    1370.4016    2.4851331   0.43982337 
+   33000    1372.8857    1370.4016    2.4851338   0.44001086 
+   34000    1372.8857    1370.4016    2.4851344   0.44017097 
+   35000    1372.8857    1370.4016    2.4851349    0.4403077 
+   36000    1372.8857    1370.4016    2.4851353   0.44042447 
+   37000    1372.8857    1370.4016    2.4851357   0.44052419 
+   38000    1372.8857    1370.4016     2.485136   0.44060935 
+   39000    1372.8857    1370.4016    2.4851363   0.44068207 
+   40000    1372.8857    1370.4016    2.4851365   0.44074418 
+   40283    1372.8857    1370.4016    2.4851366   0.44075999 
+Loop time of 14.2557 on 16 procs for 40283 steps with 5250 atoms
+
+92.2% CPU use with 16 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+         1373.30537537      1372.88567327      1372.88567327
+  Force two-norm initial, final = 0.0785019 1.08661e-06
+  Force max component initial, final = 0.0263294 1.22056e-07
+  Final line search alpha, max atom move = 0.5 6.1028e-08
+  Iterations, force evaluations = 40283 40284
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 1.3389     | 3.9912     | 7.5362     |  88.7 | 28.00
+Bond    | 0.0064403  | 0.038552   | 0.1222     |  19.7 |  0.27
+Neigh   | 0.0019398  | 0.0019565  | 0.0019808  |   0.0 |  0.01
+Comm    | 4.1029     | 7.6401     | 10.429     |  64.6 | 53.59
+Output  | 0.0018246  | 0.0018903  | 0.0026812  |   0.5 |  0.01
+Modify  | 0.094341   | 0.13695    | 0.18655    |   7.7 |  0.96
+Other   |            | 2.445      |            |       | 17.15
+
+Nlocal:    328.125 ave 370 max 265 min
+Histogram: 1 0 0 1 4 0 5 2 2 1
+Nghost:    1243.44 ave 1285 max 1208 min
+Histogram: 2 3 3 0 0 0 2 3 2 1
+Neighs:    1047.31 ave 2351 max 403 min
+Histogram: 4 4 2 2 0 0 2 0 0 2
+
+Total # of neighbors = 16757
+Ave neighs/atom = 3.19181
+Ave special neighs/atom = 0.285714
+Neighbor list builds = 3
+Dangerous builds = 0
+ERROR on proc 1: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 2: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 3: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 4: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 5: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 6: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 7: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 8: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 9: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 10: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 11: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 12: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 13: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 14: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 15: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 0: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 8 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+0.1
+5000
+30
+1
+LAMMPS (7 Aug 2019)
+WARNING: Shell command 'mkdir' failed with error 'File exists' (../input.cpp:1292)
+Created orthogonal box = (0 0 0) to (1000 1000 500)
+  2 by 4 by 2 MPI processor grid
+Lattice spacing in x,y,z = 4 4 4
+Created 250 atoms
+  create_atoms CPU = 0.00101486 secs
+250 atoms in group disl
+Created 5000 atoms
+  create_atoms CPU = 0.00122415 secs
+5000 atoms in group solute
+WARNING: 766 of 1000 force values in table are inconsistent with -dE/dr.
+  Should only be flagged at inflection points (../bond_table.cpp:395)
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) command create_bonds, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Create_bonds max distance > minimum neighbor cutoff (../create_bonds.cpp:186)
+Added 250 bonds, new total = 250
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.00067589 secs
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Inconsistent image flags (../domain.cpp:780)
+Per MPI rank memory allocation (min/avg/max) = 7.04 | 7.083 | 7.179 Mbytes
+Step TotEng E_bond E_pair c_1[1] 
+       0     1522.575    1370.1354    152.43957            0 
+    1000    1508.0937    1371.7225     136.3836    4.9567451 
+    2000    1497.7054    1373.4638    124.26625    9.8533563 
+    3000    1492.9325    1374.9044    118.06176    13.469203 
+    4000     1491.126    1375.7324    115.43336    15.889711 
+    5000    1490.4051    1376.1087    114.34016    17.514015 
+    6000    1490.0741    1376.2451    113.87553    18.641222 
+    7000    1489.9022    1376.2708       113.68    19.451904 
+    8000    1489.8053    1376.2504    113.60505    20.052521 
+    9000    1489.7479     1376.214    113.58519      20.5077 
+   10000    1489.7131    1376.1749    113.59038    20.858454 
+   11000    1489.6915    1376.1386    113.60573    21.132044 
+   12000    1489.6779     1376.107    113.62426    21.347378 
+   12202    1489.6759    1376.1014    113.62797    21.384309 
+Loop time of 4.67605 on 16 procs for 12202 steps with 5250 atoms
+
+93.5% CPU use with 16 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+         1522.57496283      1489.67586379      1489.67586379
+  Force two-norm initial, final = 0.148511 0.00312957
+  Force max component initial, final = 0.0197781 0.000295692
+  Final line search alpha, max atom move = 0.000976562 2.88762e-07
+  Iterations, force evaluations = 12202 12228
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.25382    | 1.1514     | 2.8142     |  62.9 | 24.62
+Bond    | 0.002033   | 0.010555   | 0.038506   |  12.3 |  0.23
+Neigh   | 0.025436   | 0.025946   | 0.026435   |   0.2 |  0.55
+Comm    | 0.98197    | 2.631      | 3.5623     |  41.9 | 56.27
+Output  | 0.0004826  | 0.0005028  | 0.00065652 |   0.0 |  0.01
+Modify  | 0.029884   | 0.040415   | 0.058149   |   4.0 |  0.86
+Other   |            | 0.8162     |            |       | 17.46
+
+Nlocal:    328.125 ave 370 max 265 min
+Histogram: 1 0 0 1 4 1 4 1 2 2
+Nghost:    1243.44 ave 1277 max 1196 min
+Histogram: 1 1 1 3 2 0 0 0 6 2
+Neighs:    1055.69 ave 2734 max 135 min
+Histogram: 3 5 0 2 2 1 0 0 1 2
+
+Total # of neighbors = 16891
+Ave neighs/atom = 3.21733
+Ave special neighs/atom = 0.285714
+Neighbor list builds = 44
+Dangerous builds = 0
+ERROR on proc 1: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 2: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 3: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 4: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 5: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 6: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 7: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 8: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 9: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 10: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 11: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 12: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 13: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 14: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 15: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 0: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 8 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+0.1
+5000
+50
+1
+LAMMPS (7 Aug 2019)
+WARNING: Shell command 'mkdir' failed with error 'File exists' (../input.cpp:1292)
+Created orthogonal box = (0 0 0) to (1000 1000 500)
+  2 by 4 by 2 MPI processor grid
+Lattice spacing in x,y,z = 4 4 4
+Created 250 atoms
+  create_atoms CPU = 0.00101489 secs
+250 atoms in group disl
+Created 5000 atoms
+  create_atoms CPU = 0.00124407 secs
+5000 atoms in group solute
+WARNING: 766 of 1000 force values in table are inconsistent with -dE/dr.
+  Should only be flagged at inflection points (../bond_table.cpp:395)
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) command create_bonds, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Create_bonds max distance > minimum neighbor cutoff (../create_bonds.cpp:186)
+Added 250 bonds, new total = 250
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.000565459 secs
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Inconsistent image flags (../domain.cpp:780)
+Per MPI rank memory allocation (min/avg/max) = 7.04 | 7.083 | 7.179 Mbytes
+Step TotEng E_bond E_pair c_1[1] 
+       0    2026.6278    1370.1354    656.49245            0 
+      55    2025.5434    1370.1704    655.37352   0.19170643 
+Loop time of 0.092185 on 16 procs for 55 steps with 5250 atoms
+
+90.9% CPU use with 16 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+         2026.62784113      2025.54342868      2025.54342868
+  Force two-norm initial, final = 0.160773 0.149334
+  Force max component initial, final = 0.0188575 0.0169944
+  Final line search alpha, max atom move = 4.76837e-07 8.10356e-09
+  Iterations, force evaluations = 55 255
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.0079224  | 0.02556    | 0.056185   |  10.8 | 27.73
+Bond    | 4.1988e-05 | 0.00024551 | 0.00087575 |   0.0 |  0.27
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.022627   | 0.05341    | 0.071711   |   7.5 | 57.94
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0.00056606 | 0.00088995 | 0.0013818  |   0.0 |  0.97
+Other   |            | 0.01208    |            |       | 13.10
+
+Nlocal:    328.125 ave 371 max 265 min
+Histogram: 1 0 0 2 3 3 3 0 2 2
+Nghost:    1243.44 ave 1277 max 1196 min
+Histogram: 1 1 1 3 2 0 0 0 6 2
+Neighs:    1047.94 ave 2495 max 255 min
+Histogram: 5 1 5 1 0 0 0 0 0 4
+
+Total # of neighbors = 16767
+Ave neighs/atom = 3.19371
+Ave special neighs/atom = 0.285714
+Neighbor list builds = 0
+Dangerous builds = 0
+ERROR on proc 1: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 2: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 3: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 4: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 5: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 6: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 7: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 8: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 9: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 10: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 11: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 12: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 13: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 14: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 15: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 0: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+0.1
+5000
+70
+1
+LAMMPS (7 Aug 2019)
+WARNING: Shell command 'mkdir' failed with error 'File exists' (../input.cpp:1292)
+Created orthogonal box = (0 0 0) to (1000 1000 500)
+  2 by 4 by 2 MPI processor grid
+Lattice spacing in x,y,z = 4 4 4
+Created 250 atoms
+  create_atoms CPU = 0.000934503 secs
+250 atoms in group disl
+Created 5000 atoms
+  create_atoms CPU = 0.00130746 secs
+5000 atoms in group solute
+WARNING: 766 of 1000 force values in table are inconsistent with -dE/dr.
+  Should only be flagged at inflection points (../bond_table.cpp:395)
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) command create_bonds, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Create_bonds max distance > minimum neighbor cutoff (../create_bonds.cpp:186)
+Added 250 bonds, new total = 250
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.00059791 secs
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Inconsistent image flags (../domain.cpp:780)
+Per MPI rank memory allocation (min/avg/max) = 7.04 | 7.083 | 7.179 Mbytes
+Step TotEng E_bond E_pair c_1[1] 
+       0    2789.2908    1370.1354    1419.1554            0 
+      29    2788.9098    1370.1381    1418.7717  0.026985743 
+Loop time of 0.125973 on 16 procs for 29 steps with 5250 atoms
+
+89.6% CPU use with 16 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+         2789.29076121      2788.90975067      2788.90975067
+  Force two-norm initial, final = 0.177582 0.173
+  Force max component initial, final = 0.0259175 0.0236466
+  Final line search alpha, max atom move = 2.38419e-07 5.6378e-09
+  Iterations, force evaluations = 29 352
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.0069806  | 0.036249   | 0.073478   |  12.1 | 28.77
+Bond    | 4.9776e-05 | 0.00033184 | 0.001117   |   0.0 |  0.26
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.032906   | 0.071442   | 0.10029    |   8.7 | 56.71
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0.00069572 | 0.0012139  | 0.0018496  |   0.9 |  0.96
+Other   |            | 0.01674    |            |       | 13.29
+
+Nlocal:    328.125 ave 371 max 265 min
+Histogram: 1 0 0 2 3 3 3 0 2 2
+Nghost:    1243.44 ave 1277 max 1196 min
+Histogram: 1 1 1 3 2 0 0 0 6 2
+Neighs:    1047.94 ave 2495 max 255 min
+Histogram: 5 1 5 1 0 0 0 0 0 4
+
+Total # of neighbors = 16767
+Ave neighs/atom = 3.19371
+Ave special neighs/atom = 0.285714
+Neighbor list builds = 0
+Dangerous builds = 0
+ERROR on proc 4: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 5: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 6: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 7: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 8: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 9: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 10: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 11: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 12: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 13: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 14: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 15: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 0: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 1: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 2: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 3: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+0.1
+5000
+90
+1
+LAMMPS (7 Aug 2019)
+WARNING: Shell command 'mkdir' failed with error 'File exists' (../input.cpp:1292)
+Created orthogonal box = (0 0 0) to (1000 1000 500)
+  2 by 4 by 2 MPI processor grid
+Lattice spacing in x,y,z = 4 4 4
+Created 250 atoms
+  create_atoms CPU = 0.000917245 secs
+250 atoms in group disl
+Created 5000 atoms
+  create_atoms CPU = 0.0013461 secs
+5000 atoms in group solute
+WARNING: 766 of 1000 force values in table are inconsistent with -dE/dr.
+  Should only be flagged at inflection points (../bond_table.cpp:395)
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) command create_bonds, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Create_bonds max distance > minimum neighbor cutoff (../create_bonds.cpp:186)
+Added 250 bonds, new total = 250
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.000599564 secs
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Inconsistent image flags (../domain.cpp:780)
+Per MPI rank memory allocation (min/avg/max) = 7.04 | 7.083 | 7.179 Mbytes
+Step TotEng E_bond E_pair c_1[1] 
+       0    3477.1219    1370.1354    2106.9865            0 
+      30    3476.5682    1370.1392     2106.429  0.020325925 
+Loop time of 0.149716 on 16 procs for 30 steps with 5250 atoms
+
+92.1% CPU use with 16 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+         3477.12186698      3476.56818553      3476.56818553
+  Force two-norm initial, final = 0.171274 0.164713
+  Force max component initial, final = 0.0271151 0.0242963
+  Final line search alpha, max atom move = 2.38419e-07 5.79269e-09
+  Iterations, force evaluations = 30 370
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.012312   | 0.039331   | 0.092953   |  13.0 | 26.27
+Bond    | 6.0576e-05 | 0.00035361 | 0.0012511  |   0.0 |  0.24
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.037227   | 0.090069   | 0.11903    |   8.6 | 60.16
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0.00088177 | 0.0013315  | 0.0022154  |   1.0 |  0.89
+Other   |            | 0.01863    |            |       | 12.44
+
+Nlocal:    328.125 ave 371 max 265 min
+Histogram: 1 0 0 2 3 3 3 0 2 2
+Nghost:    1243.44 ave 1277 max 1196 min
+Histogram: 1 1 1 3 2 0 0 0 6 2
+Neighs:    1047.94 ave 2495 max 255 min
+Histogram: 5 1 5 1 0 0 0 0 0 4
+
+Total # of neighbors = 16767
+Ave neighs/atom = 3.19371
+Ave special neighs/atom = 0.285714
+Neighbor list builds = 0
+Dangerous builds = 0
+ERROR on proc 2: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 3: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 4: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 5: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 6: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 7: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 8: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 9: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 10: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 11: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 12: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 13: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 14: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 15: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 0: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+ERROR on proc 1: Substitution for illegal variable c (../input.cpp:553)
+Last command: c
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 10 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+0.1
+7000
+10
+1
+LAMMPS (7 Aug 2019)
+WARNING: Shell command 'mkdir' failed with error 'File exists' (../input.cpp:1292)
+Created orthogonal box = (0 0 0) to (1000 1000 500)
+  2 by 4 by 2 MPI processor grid
+Lattice spacing in x,y,z = 4 4 4
+Created 250 atoms
+  create_atoms CPU = 0.000939281 secs
+250 atoms in group disl
+Created 7000 atoms
+  create_atoms CPU = 0.0013267 secs
+7000 atoms in group solute
+WARNING: 766 of 1000 force values in table are inconsistent with -dE/dr.
+  Should only be flagged at inflection points (../bond_table.cpp:395)
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) command create_bonds, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Create_bonds max distance > minimum neighbor cutoff (../create_bonds.cpp:186)
+Added 250 bonds, new total = 250
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.000617458 secs
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 10000, page size: 100000
+  master list distance cutoff = 102
+  ghost atom cutoff = 102
+  binsize = 51, bins = 20 20 10
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Inconsistent image flags (../domain.cpp:780)
+Per MPI rank memory allocation (min/avg/max) = 7.104 | 7.144 | 7.238 Mbytes
+Step TotEng E_bond E_pair c_1[1] 
+       0    1374.1918    1370.1354    4.0564393            0 
+    1000    1373.8041    1370.3682    3.4351778  -0.29763925 
+    2000    1373.7878    1370.3836    3.4029752  -0.48678458 
+    3000    1373.7811    1370.3864    3.3931244  -0.62278656 
+    4000    1373.7771    1370.3868    3.3884816  -0.72683231 
+0.1
+7000
+30
+1
+0.1
+7000
+50
+1
+0.1
+7000
+70
+1
+0.1
+7000
+90
+1
+0.1
+9000
+10
+1

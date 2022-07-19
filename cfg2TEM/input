@@ -1,0 +1,17 @@
+#input CFG filename, mass of atom, and element name
+#		cfgfile				mass		element			projection direction
+#	NiCoCr/40000.cfg				58.93	Co				4
+#	NiCoCr/40000.cfg				52		Cr				4
+#	NiCoCr/40000.cfg				58.69	Ni				4
+	Mo_crack_2.cfg					95.94	Mo				3
+#	rectangular area, reduced coordinate
+#	xlo		xhi		ylo		yhi		zlo		zhi
+	0.3		1.0		0.0		1.0		0.0		1.0
+#	Resolution of output image
+#	output_name			ROW		COL
+#	NiCoCr/Co40000.jpg	2000	1414
+#	NiCoCr/Cr40000.jpg	2000	1414
+	Mo_2.jpg				2820	3020
+#	parameter for grayscale image
+#	MAX_RGB		w		b
+	255			6		0

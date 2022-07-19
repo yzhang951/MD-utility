@@ -1,0 +1,28 @@
+units           metal
+boundary        p p f
+atom_style      atomic
+
+read_data       Mo_disl.in
+
+pair_style  	eam/alloy
+pair_coeff  	* * /home/yzhang951/Mo_crack/mo.fs.eam.alloy Mo
+
+thermo          1000
+thermo_style    custom step temp etotal lx ly lz pxx pyy pzz pxy pyz pxz
+dump            1 all cfg 200 Mo*.cfg mass type xs ys zs
+dump_modify     1 element Mo sort id
+
+minimize        1e-20 1e-20 1000000 1000000
+
+region			1 block EDGE EDGE 0 10 EDGE EDGE units box
+region			2 block EDGE EDGE 147 160 EDGE EDGE units box
+group			1 region 1
+group			2 region 2	
+fix             1 all deform 1 y scale 1.02 remap x
+run             1
+unfix           1
+
+fix				2 1 setforce 0 0 0
+fix				3 2 setforce 0 0 0
+
+minimize        1e-20 1e-20 1000000 1000000

@@ -1,0 +1,69 @@
+units			metal
+boundary		p p p
+atom_style		atomic
+# Lattice constant 4.0782
+
+region			mybox block 0.0 600 0.0 600 0.0 200 units box 
+create_box		1 mybox
+
+region			xtal11 prism 100 300 300 450 0 200 100 0 0 units box
+region			xtal12 prism 300 500 300 450 0 200 -100 0 0 units box
+region			xtal13 prism 200 400 150 300 0 200 -100 0 0 units box
+region			xtal14 prism 200 400 150 300 0 200 100 0 0 units box
+region			xtal1 union 4 xtal11 xtal12 xtal13 xtal14
+
+lattice			fcc 4.0782 origin 0 0 0 orient x 13 -8 -5 orient y 1 6 -7 orient z 1 1 1
+create_atoms	1 region xtal1
+group			grain2 region xtal1
+displace_atoms	grain2 move 0 300 0 units box
+
+lattice			fcc 4.0782 origin 0 0 0 orient x 1 -1 0 orient y 1 1 -2 orient z 1 1 1
+create_atoms	1 region xtal1
+group			grain3 region xtal1
+displace_atoms	grain3 move 300 150 0 units box
+
+lattice			fcc 4.0782 origin 0 0 0 orient x -5 4 1 orient y -1 -2 3 orient z 1 1 1
+create_atoms	1 region xtal1
+group			grain4 region xtal1
+displace_atoms	grain4 move 300 -150 0 units box
+
+lattice			fcc 4.0782 origin 0 0 0 orient x 1 1 -2 orient y -1 1 0 orient z 1 1 1
+create_atoms	1 region xtal1
+group			grain1 region xtal1
+
+region			del1 block EDGE EDGE EDGE EDGE 0 25 units box
+region			del2 block EDGE EDGE EDGE EDGE 175 200 units box
+region			del union 2 del1 del2
+
+mass			1 196.967
+
+pair_style		eam
+pair_coeff		* * /home/yzhang951/Au_Al/Au_u3.eam
+
+delete_atoms	overlap 2.8 all all
+delete_atoms	region del
+
+thermo			100
+thermo_style	custom step temp etotal lx pxx pyy pzz
+dump			1 all cfg 1000 Au*.cfg mass type xs ys zs
+dump_modify		1 element Au sort id
+
+#fix				1 all box/relax x 100 y 0 z 0
+#minimize		1e-10 1e-10 100000 100000
+
+velocity		all create 900.0 52386 dist gaussian units box
+fix				1 all npt temp 900 900 0.1 x 1 1 0.5 y 1 1 0.5 z 1 1 0.5
+run				10000
+
+unfix			1
+fix				1 all nvt temp 900 300 0.1
+run				30000
+unfix			1
+
+fix				1 all npt temp 300 300 0.1 x 1 1 0.5 y 1 1 0.5 z 1 1 0.5
+run				10000
+
+unfix			1
+fix				1 all nvt temp 300 300 0.1
+fix				2 all deform 1 x erate 0.0001 y erate -0.00003 units box remap x
+run				1000000

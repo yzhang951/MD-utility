@@ -1,0 +1,40 @@
+#	User defined parameter
+#	w:	distance parameter for convolution, unit [pixel]
+#	w2:	distance which is slightly bigger than atom radius, unit [pixel]
+#	cutoff: cutoff distance determines neighbor list, unit [pixel]
+#	lamda:	Gaussian correlation length, unit [pixel]
+#	r:	intensity lower bound to filter background noise
+#	offset: translation movement offset
+#	w,	w2,	cutoff	lamda,	r		,offset
+	5	3	15		1		0.025		0	
+#	MAX:	maximum number of particle
+#	L:		maximum distance a particle is allowed to move
+#	mul:	factor that dinstinguishi center and edge of image
+#	MAX,	L		mul
+	6000	3		1
+#	ROWxCOl is the resolution of output image
+#	ROW,	COL		resolution
+	1000	1000	
+#	Names of input and output file
+#	photo num and photo name, output file name
+	3	
+	ABC/R.jpg	
+	ABC/B.jpg	
+	ABC/C.jpg	
+	tmp.jpg
+#	parameter for final output image
+#	r1, r2:	radius of atom in image, unit [pixel]
+#	line_width for line, unit [pixel]
+#	R1, G1, B1, R2, G2, B2: RGB color for atoms
+#	r1	R1	G1	B1	r2	R2	G2	B2	r3	R3	G3	B3	line_width
+	10	255	2	2	06	50	150	60	02	0	100	200	3
+#	parameter for patching area
+#	number of patching area
+	1
+#	xlo xhi ylo yhi determine the rectangular area, reduced coordinate!!
+#	xlo		xhi		ylo		yhi
+#	0.20	0.60	0.15	0.45
+	0.0		0		0		0
+#	offset manually, if (# of image) == 0, no offset will be operated
+#	# of image		dx		dy
+	0				0		0
