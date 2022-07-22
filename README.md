@@ -1,4 +1,4 @@
-# CPFEM-VUMAT
+# MD-utility
 Some examples and utilities for molecular dynamics simulations
 
 ## Introduction
