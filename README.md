@@ -10,9 +10,9 @@ The repository contains molecular dynamics simulation code for the following pap
 
 3. LCO_NMC/ Li, Yanshuai, et al. ["Degradation by kinking in layered cathode materials."](https://pubs.acs.org/doi/abs/10.1021/acsenergylett.1c01976) ACS Energy Letters 6.11 (2021): 3960-3969.
 
-4. NiTi/ in prep.
+4. NiTi/ Tang, Hao, et al. ["High accuracy neural network interatomic potential for NiTi shape memory alloy."](https://www.sciencedirect.com/science/article/pii/S1359645422005973) Acta Materialia (2022): 118217..
 
-5. Pt_atom_tracking/ Wang, Lihua, et al. "Tracking the sliding of grain boundaries at the atomic scale." Science 375.6586 (2022): 1261-1265.
+5. Pt_atom_tracking/ Wang, Lihua, et al. ["Tracking the sliding of grain boundaries at the atomic scale."](https://www.science.org/doi/full/10.1126/science.abm2612) Science 375.6586 (2022): 1261-1265.
 
 
 ## Contact
