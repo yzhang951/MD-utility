@@ -1,0 +1,102 @@
+LAMMPS (7 Aug 2019)
+########## Displace atoms of rows A, B and C to create Right-hand screw dislocation
+########## dengke.chen@hotmail.com
+########## 07/27/2018
+##################################################
+##########~~~~~~~~~~~~~~ Initialization
+units	          metal
+timestep          0.001
+dimension         3
+boundary          p p p
+atom_style        atomic
+atom_modify       map array sort 0 0
+#~~~~~ Important values
+#~~~~~
+
+##########~~~~~~~~~~~~~~ Read Data File
+read_data         restart.in
+  orthogonal box = (0 0 0) to (206.933 88.7746 19.9121)
+  8 by 2 by 1 MPI processor grid
+  reading atoms ...
+  18432 atoms
+  read_data CPU = 0.0393772 secs
+
+##########~~~~~~~~~~~~~~ EAM potential
+pair_style        eam/alloy
+pair_coeff        * * NiAlH_jea.eam.alloy Ni
+
+##########~~~~~~~~~~~~~~ Energy minimization
+thermo            100
+thermo_style      custom step pe pyz
+
+##########~~~~~~~~~~~~~~ Read boundary condition
+region			  top block EDGE EDGE 63 EDGE EDGE EDGE units box
+region			  bot block EDGE EDGE EDGE 26 EDGE EDGE units box
+group			  fixtop region top
+2304 atoms in group fixtop
+group			  fixbot region bot
+2304 atoms in group fixbot
+fix               1 fixtop addforce 0 0 -0.0001
+fix               2 fixbot addforce 0 0 0.0001
+
+fix_modify		  1 energy yes
+fix_modify		  2 energy yes
+
+dump              1 all cfg 10000 *.cfg mass type xs ys zs
+dump_modify       1 element Ni sort id format float %20.15g
+
+minimize          1.0e-25 1.0e-30 100000 100000
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (../min.cpp:168)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 7.65
+  ghost atom cutoff = 7.65
+  binsize = 3.825, bins = 55 24 6
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair eam/alloy, perpetual
+      attributes: half, newton on
+      pair build: half/bin/atomonly/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 5.707 | 5.713 | 5.725 Mbytes
+Step PotEng Pyz 
+       0   -81013.712  0.029561816 
+     100   -81013.713    43.016364 
+     200   -81013.713    43.062011 
+     242   -81013.713    43.066992 
+Loop time of 1.81457 on 16 procs for 242 steps with 18432 atoms
+
+99.8% CPU use with 16 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = energy tolerance
+  Energy initial, next-to-last, final = 
+        -81013.7120574     -81013.7132524     -81013.7132524
+  Force two-norm initial, final = 0.111396 3.00185e-05
+  Force max component initial, final = 0.00207958 6.1222e-07
+  Final line search alpha, max atom move = 1 6.1222e-07
+  Iterations, force evaluations = 242 484
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 1.5633     | 1.6574     | 1.6931     |   2.7 | 91.34
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.043942   | 0.082664   | 0.17437    |  12.3 |  4.56
+Output  | 7.3433e-05 | 7.5266e-05 | 8.9407e-05 |   0.0 |  0.00
+Modify  | 0.0024178  | 0.0025872  | 0.002655   |   0.1 |  0.14
+Other   |            | 0.07187    |            |       |  3.96
+
+Nlocal:    1152 ave 1152 max 1152 min
+Histogram: 16 0 0 0 0 0 0 0 0 0
+Nghost:    3229.75 ave 3329 max 3173 min
+Histogram: 5 2 1 2 1 1 0 0 2 2
+Neighs:    95402.5 ave 97571 max 93192 min
+Histogram: 7 1 0 0 0 0 0 0 1 7
+
+Total # of neighbors = 1526440
+Ave neighs/atom = 82.8147
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:01

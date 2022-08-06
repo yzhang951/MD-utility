@@ -1,0 +1,40 @@
+########## Displace atoms of rows A, B and C to create Right-hand screw dislocation
+########## dengke.chen@hotmail.com
+########## 07/27/2018 
+##################################################
+##########~~~~~~~~~~~~~~ Initialization
+units	          metal
+timestep          0.001
+dimension         3
+boundary          p p p
+atom_style        atomic
+atom_modify       map array sort 0 0 
+#~~~~~ Important values
+#~~~~~
+
+##########~~~~~~~~~~~~~~ Read Data File
+read_data         restart.in
+
+##########~~~~~~~~~~~~~~ EAM potential 
+pair_style        eam/alloy
+pair_coeff        * * NiAlH_jea.eam.alloy Ni
+
+##########~~~~~~~~~~~~~~ Energy minimization 
+thermo            100
+thermo_style      custom step pe pyz
+
+##########~~~~~~~~~~~~~~ Read boundary condition
+region			  top block EDGE EDGE 63 EDGE EDGE EDGE units box
+region			  bot block EDGE EDGE EDGE 26 EDGE EDGE units box
+group			  fixtop region top
+group			  fixbot region bot
+fix               1 fixtop addforce 0 0 -0.0001 
+fix               2 fixbot addforce 0 0 0.0001
+
+fix_modify		  1 energy yes
+fix_modify		  2 energy yes
+
+dump              1 all cfg 10000 *.cfg mass type xs ys zs
+dump_modify       1 element Ni sort id format float %20.15g
+
+minimize          1.0e-25 1.0e-30 100000 100000
