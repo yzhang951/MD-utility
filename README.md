@@ -16,4 +16,4 @@ The repository contains molecular dynamics simulation code for the following pap
 
 
 ## Contact
-Please contact Dr. Yin Zhang yzhang951@gatech.edu or yinzhang@mit.edu for more technical details.
+Please contact Dr. Yin Zhang yinzhang@pku.edu.cn for more technical details.
