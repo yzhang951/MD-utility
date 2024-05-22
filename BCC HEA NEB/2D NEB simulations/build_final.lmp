@@ -1,0 +1,64 @@
+units           metal
+boundary        p p p
+atom_style      atomic
+
+read_data       ${name}
+next            name
+change_box      all triclinic
+# target stress in MPa
+variable        target_stress equal 100 
+variable        A_y  equal 8.224*69.864
+variable	    ratio equal 263.879/110.134/10.0*(-1)
+
+variable        p_xx equal pxx*${ratio}
+variable        p_yy equal pyy*${ratio}
+variable        p_zz equal pzz*${ratio}
+variable        p_xy equal pxy*${ratio}
+variable        p_yz equal pyz*${ratio}
+variable        p_xz equal pxz*${ratio}
+
+mass             1 92.91  # Nb
+mass             2 95.94 # Mo
+mass             3 180.9 # Ta
+mass             4 183.8 # W
+
+#set             type 2 type/ratio 1 0.25 87393
+#set             type 2 type/ratio 3 0.333333333333333 87393
+#set             type 2 type/ratio 4 0.5 87393
+
+pair_style      mlip /work/home/fzhao/potentials/mlip.ini
+pair_coeff      * *
+
+thermo          100
+thermo_style    custom step etotal pxx pyy pzz pxy pyz pxz v_p_xx v_p_yy v_p_zz v_p_xy v_p_yz v_p_xz
+dump            1 all cfg 1000 ${name}_*.cfg mass type xs ys zs
+dump_modify     1 element Nb Mo Ta W sort id format float %20.15g
+
+#region          top block EDGE EDGE 172 EDGE EDGE EDGE units box #default lattice
+#region          bot block EDGE EDGE EDGE 97 EDGE EDGE units box
+#group           fixtop region top
+#group           fixbot region bot
+#variable        num_top equal count(fixtop)
+#variable        num_bot equal count(fixbot)
+
+#if              "${num_top}!=${num_bot}" then &
+#                "print 'Unequal atom numbers of top and bottom layers!'" &
+#                "jump SELF break" 
+
+#delete_atoms    group fixtop
+#delete_atoms    group fixbot 
+
+#run             0
+#variable        appforce_top equal ${target_stress}*${A_z}/${num_top}/(1.6e5)
+#variable        appforce_bot equal ${target_stress}*${A_z}/${num_top}/(1.6e5)
+
+#fix             1 fixtop addforce -${appforce_top} 0 0
+#fix             2 fixbot addforce ${appforce_bot} 0 0
+#fix_modify      1 energy yes
+#fix_modify      2 energy yes
+
+
+
+minimize        1e-20 1e-20 1000000 1000000
+
+label           break
