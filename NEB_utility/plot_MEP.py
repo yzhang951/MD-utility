@@ -3,7 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 N_replica = 64
-cfgname = 'Cu30753_'
+output = os.popen('grep -B 1 Climb log.lammps | head -n1 | cut -d " " -f1').read()
+cfg_num = output.split()[0]
+cfgname = 'Cu'+cfg_num+'_'
 
 def extract_coordinates(file_name):
     coordinates = {}
